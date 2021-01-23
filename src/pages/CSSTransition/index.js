@@ -10,7 +10,12 @@ const Page = () => {
       <Switch onClick={() => setVisible(!visible)}>
         {visible ? "Show Block" : "Hide Block"}
       </Switch>
-      <CSSTransition in={visible} timeout={1000} unmountOnExit>
+      <CSSTransition
+        in={visible}
+        timeout={1000}
+        unmountOnExit
+        classNames="move"
+      >
         <Block />
       </CSSTransition>
     </>
