@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fadeTransition } from "../../utils/transitions";
 
 export const Root = styled.div`
   position: relative;
@@ -6,26 +7,6 @@ export const Root = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 40px;
-`;
-
-export const Box = styled.div`
-  position: relative;
-  width: 80px;
-  height: 80px;
-  border: 1px solid #ccc;
-  overflow: hidden;
-`;
-
-export const Item = styled.div`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  font-size: 30px;
 `;
 
 export const Button = styled.span`
@@ -50,4 +31,25 @@ export const Button = styled.span`
   &:nth-of-type(4) {
     top: 100%;
   }
+`;
+
+export const Box = styled.div`
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+`;
+
+export const Item = styled.div`
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  ${fadeTransition(1000)}
 `;
