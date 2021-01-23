@@ -8,37 +8,46 @@ const Page = () => {
   const [index0, setIndex0] = React.useState(0);
   const [index, setIndex] = React.useState(0);
   const [dir, setDir] = React.useState("");
+  const [lock, setLock] = React.useState(false);
 
   React.useEffect(() => {
     setIndex(index0);
   }, [index0]);
 
+  const update = (index, dir) => {
+    if (lock) return;
+    setIndex0(index);
+    setDir(dir);
+  };
+
   const handleUp = () => {
-    setIndex0((index0 + items.length - 1) % items.length);
-    setDir("up");
+    update((index0 + items.length - 1) % items.length, "up");
   };
 
   const handleDown = () => {
-    setIndex0((index0 + 1) % items.length);
-    setDir("down");
+    update((index0 + 1) % items.length, "down");
   };
 
   const handleLeft = () => {
-    setIndex0((index0 + items.length - 1) % items.length);
-    setDir("left");
+    update((index0 + items.length - 1) % items.length, "left");
   };
 
   const handleRight = () => {
-    setIndex0((index0 + 1) % items.length);
-    setDir("right");
+    update((index0 + 1) % items.length, "right");
   };
 
   return (
     <Root>
       <Box>
         <TransitionGroup component={null}>
-          <CSSTransition key={index} timeout={1000} classNames={dir}>
-            <Item class>{items[index]}</Item>
+          <CSSTransition
+            key={index}
+            timeout={500}
+            classNames={dir}
+            onEnter={() => setLock(true)}
+            onEntered={() => setLock(false)}
+          >
+            <Item>{items[index]}</Item>
           </CSSTransition>
         </TransitionGroup>
       </Box>

@@ -57,14 +57,14 @@ export const Item = styled.div`
   }
   &.up-enter-active {
     transform: none;
-    transition: transform 1000ms;
+    transition: transform 500ms;
   }
   &.up-exit {
     transform: none;
   }
   &.up-exit-active {
     transform: translate(0, 100%);
-    transition: transform 1000ms;
+    transition: transform 500ms;
   }
 
   &.down-enter {
@@ -72,14 +72,14 @@ export const Item = styled.div`
   }
   &.down-enter-active {
     transform: none;
-    transition: transform 1000ms;
+    transition: transform 500ms;
   }
   &.down-exit {
     transform: none;
   }
   &.down-exit-active {
     transform: translate(0, -100%);
-    transition: transform 1000ms;
+    transition: transform 500ms;
   }
 
   &.left-enter {
@@ -87,14 +87,14 @@ export const Item = styled.div`
   }
   &.left-enter-active {
     transform: none;
-    transition: transform 1000ms;
+    transition: transform 500ms;
   }
   &.left-exit {
     transform: none;
   }
   &.left-exit-active {
     transform: translate(100%, 0);
-    transition: transform 1000ms;
+    transition: transform 500ms;
   }
 
   &.right-enter {
@@ -102,13 +102,13 @@ export const Item = styled.div`
   }
   &.right-enter-active {
     transform: none;
-    transition: transform 1000ms;
+    transition: transform 500ms;
   }
   &.right-exit {
     transform: none;
   }
   &.right-exit-active {
     transform: translate(-100%, 0);
-    transition: transform 1000ms;
+    transition: transform 500ms;
   }
 `;
