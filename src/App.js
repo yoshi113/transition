@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import CSSTransition from "./pages/CSSTransition";
 import TransitionGroup from "./pages/TransitionGroup";
+import TransitionGroup1 from "./pages/TransitionGroup1";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <header>
         <Link to="/css-transition">CSSTransition</Link>
         <Link to="/transition-group">TransitionGroup</Link>
+        <Link to="/transition-group1">TransitionGroup1</Link>
       </header>
       <main>
         <Switch>
@@ -16,6 +18,9 @@ function App() {
           </Route>
           <Route exact path="/transition-group">
             <TransitionGroup />
+          </Route>
+          <Route exact path="/transition-group1">
+            <TransitionGroup1 />
           </Route>
         </Switch>
       </main>
