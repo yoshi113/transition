@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Button, Item } from "./styles";
 
 let id = 1;
@@ -17,12 +18,16 @@ const Page = () => {
   return (
     <>
       <Button onClick={handleAdd}>Add</Button>
-      {items.map((item) => (
-        <Item key={item}>
-          Item {item}
-          <span onClick={() => handleRemove(item)}>x</span>
-        </Item>
-      ))}
+      <TransitionGroup>
+        {items.map((item) => (
+          <CSSTransition key={item} timeout={500}>
+            <Item>
+              Item {item}
+              <span onClick={() => handleRemove(item)}>x</span>
+            </Item>
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
     </>
   );
 };
