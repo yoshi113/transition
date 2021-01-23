@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fadeTransition } from "../../utils/transitions";
+import { moveTransition } from "../../utils/transitions";
 
 export const Root = styled.div`
   position: relative;
@@ -51,5 +51,64 @@ export const Item = styled.div`
   width: 100%;
   height: 100%;
   font-size: 30px;
-  ${fadeTransition(1000)}
+
+  &.up-enter {
+    transform: translate(0, -100%);
+  }
+  &.up-enter-active {
+    transform: none;
+    transition: transform 1000ms;
+  }
+  &.up-exit {
+    transform: none;
+  }
+  &.up-exit-active {
+    transform: translate(0, 100%);
+    transition: transform 1000ms;
+  }
+
+  &.down-enter {
+    transform: translate(0, 100%);
+  }
+  &.down-enter-active {
+    transform: none;
+    transition: transform 1000ms;
+  }
+  &.down-exit {
+    transform: none;
+  }
+  &.down-exit-active {
+    transform: translate(0, -100%);
+    transition: transform 1000ms;
+  }
+
+  &.left-enter {
+    transform: translate(-100%, 0);
+  }
+  &.left-enter-active {
+    transform: none;
+    transition: transform 1000ms;
+  }
+  &.left-exit {
+    transform: none;
+  }
+  &.left-exit-active {
+    transform: translate(100%, 0);
+    transition: transform 1000ms;
+  }
+
+  &.right-enter {
+    transform: translate(100%, 0);
+  }
+  &.right-enter-active {
+    transform: none;
+    transition: transform 1000ms;
+  }
+  &.right-exit {
+    transform: none;
+  }
+  &.right-exit-active {
+    transform: translate(-100%, 0);
+    transition: transform 1000ms;
+  }
 `;
