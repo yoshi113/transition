@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSTransition } from "react-transition-group";
 import { Switch, Block } from "./styles";
 
 const Page = () => {
@@ -9,7 +10,9 @@ const Page = () => {
       <Switch onClick={() => setVisible(!visible)}>
         {visible ? "Show Block" : "Hide Block"}
       </Switch>
-      <Block visible={visible} />
+      <CSSTransition in={visible} timeout={1000} unmountOnExit>
+        <Block />
+      </CSSTransition>
     </>
   );
 };

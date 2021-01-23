@@ -12,6 +12,19 @@ export const Block = styled.div`
   width: 300px;
   height: 300px;
   background-color: green;
-  transition: opacity 1s;
-  opacity: ${(props) => (props.visible ? 1 : 0)};
+
+  &.enter {
+    opacity: 0;
+  }
+  &.enter-active {
+    opacity: 1;
+    transition: opacity 1s;
+  }
+  &.exit {
+    opacity: 1;
+  }
+  &.exit-active {
+    opacity: 0;
+    transition: opacity 1s;
+  }
 `;
